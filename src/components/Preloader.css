@@ -1,0 +1,57 @@
+.preloader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Terminal text usually flows from top, but centering is also nice. Let's do bottom-left text like a real boot log */
+  padding: 3rem;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+}
+
+.boot-text {
+  color: var(--accent-cyan);
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 5px var(--accent-cyan);
+}
+
+.loading-bar-container {
+  width: 300px;
+  height: 4px;
+  background: #1a1a1a;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.loading-bar-fill {
+  height: 100%;
+  background: var(--accent-purple);
+  width: 0%;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px var(--accent-purple);
+}
+
+.blink {
+  animation: blink-animation 1s steps(2, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 768px) {
+    .preloader-container {
+        padding: 1.5rem;
+    }
+}

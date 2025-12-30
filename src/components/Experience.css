@@ -1,0 +1,147 @@
+.experience-container {
+    position: relative;
+    padding: 4rem 2rem;
+    overflow: hidden;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(180deg,
+            transparent 0%,
+            var(--accent-cyan) 15%,
+            var(--accent-purple) 85%,
+            transparent 100%);
+    transform: translateX(-50%);
+    box-shadow: 0 0 15px var(--accent-cyan);
+}
+
+.experience-item {
+    position: relative;
+    width: 50%;
+    margin-bottom: 4rem;
+    padding: 0 3rem;
+    z-index: 10;
+}
+
+.experience-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.experience-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.planet-marker {
+    position: absolute;
+    top: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-cyan);
+    box-shadow: 0 0 10px var(--accent-cyan), inset 0 0 10px var(--accent-purple);
+    z-index: 20;
+    transition: all 0.3s ease;
+}
+
+.experience-item:nth-child(odd) .planet-marker {
+    right: -10px;
+    /* Half width of marker */
+}
+
+.experience-item:nth-child(even) .planet-marker {
+    left: -10px;
+    /* Half width of marker */
+}
+
+.experience-card {
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.experience-card:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 30px -10px rgba(0, 242, 255, 0.2);
+}
+
+.experience-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent-cyan), transparent);
+    opacity: 0.5;
+}
+
+.experience-role {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.experience-company {
+    font-size: 1.1rem;
+    color: var(--accent-cyan);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.experience-date {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-family: monospace;
+    margin-bottom: 1rem;
+    display: inline-block;
+    padding: 0.2rem 0.6rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.experience-list {
+    list-style: none;
+    color: var(--text-secondary);
+}
+
+.experience-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.experience-list li::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: var(--accent-purple);
+}
+
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 20px;
+    }
+
+    .experience-item {
+        width: 100%;
+        padding-left: 3rem;
+        padding-right: 0;
+        text-align: left !important;
+        left: 0 !important;
+    }
+
+    .experience-item:nth-child(odd) .planet-marker,
+    .experience-item:nth-child(even) .planet-marker {
+        left: 10px;
+        right: auto;
+    }
+}
