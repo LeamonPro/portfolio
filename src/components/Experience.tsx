@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Rocket, Calendar, MapPin } from "lucide-react";
+import { Rocket, Calendar } from "lucide-react";
 import "./Experience.css";
 
 const experiences = [
