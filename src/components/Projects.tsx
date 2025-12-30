@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
 import "./Projects.css";
+import mezriguiImg from "../assets/mezrigui.png";
 
 const projects = [
   {
@@ -11,7 +12,7 @@ const projects = [
     tech: ["ReactTS", "Express.js", "MySql", "WebGL"],
     github: "#",
     live: "https://www.mezriguivoyages.com",
-    image: "src/assets/mezrigui.png",
+    image: mezriguiImg,
   },
   {
     title: "Inspire Trade",
